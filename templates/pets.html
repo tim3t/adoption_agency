@@ -11,7 +11,7 @@
     <h1 class = "display-4">Adopt Me!</h1>
         <ul>
             {% for pet in pets %}
-            <img src="{{pet.photo_url}}">
+            <img src="{{pet.photo_url}}" width="300">
             {% if pet.available == True %}
                 <p>{{pet.name}} is <b>Available</b>!</p>
             {% else %}

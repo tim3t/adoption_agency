@@ -8,6 +8,16 @@
 </head>
 <body>
     <h1>Add a Pet</h1>
-    <p>Testing the route works</p>
+    <form method="POST">
+    {{ form.hidden_tag() }}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+    <p>{{field.label}} 
+    {{field}} {% for err in field.errors %} {{ err }} </p>
+    {% endfor %}
+    {% endfor %}
+    <hr>
+    <p><button>Add Pet!</button></p>
+    <a href="/">Go Back</a>
+    </form>
 </body>
 </html>
